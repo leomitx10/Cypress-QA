@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-21T13:26:45.701Z",
+    "end": "2024-11-21T13:27:04.192Z",
+    "duration": 18491,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c3347d9d-e02b-445a-b4e3-2b7e5f5fd79b",
+      "title": "",
+      "fullFile": "cypress/e2e/G. fluxo.cy.js",
+      "file": "cypress/e2e/G. fluxo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "faf0d7c7-1d9e-4ba4-b145-e2fae593d0a8",
+          "title": "Fluxo de Cadastro Completo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adicionar produto no carrinho",
+              "fullTitle": "Fluxo de Cadastro Completo Adicionar produto no carrinho",
+              "timedOut": null,
+              "duration": 11992,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário de endereço\ncy.visit('http://localhost:3000/#/address/create');\ncy.preencherFormularioEndereco(endereco.country, endereco.name, endereco.phone, endereco.zip, endereco.fullAddress, endereco.state, endereco.city);\ncy.get('.mat-button-wrapper').contains('Submit').click();\ncy.wait(2000);\n// Pesquisa e adiciona o produto ao carrinho\ncy.visit('http://localhost:3000/#/search');\ncy.ColocandoProdutoCarrinho(productName);\ncy.get('button[aria-label=\"Show the shopping cart\"]').click();",
+              "err": {},
+              "uuid": "4fc194fd-f526-4f9f-9b2b-1f6471558881",
+              "parentUUID": "faf0d7c7-1d9e-4ba4-b145-e2fae593d0a8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirmar carrinho e prosseguir para o pagamento",
+              "fullTitle": "Fluxo de Cadastro Completo Confirmar carrinho e prosseguir para o pagamento",
+              "timedOut": null,
+              "duration": 445,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Confirma o carrinho e vai para o pagamento\ncy.get('span.mat-button-wrapper:contains(\"Checkout\")').click();\ncy.get('mat-radio-button.mat-radio-button').first().click(); // Escolhe a primeira opção\ncy.get('button[aria-label=\"Proceed to payment selection\"]').click();",
+              "err": {},
+              "uuid": "8ccde6b2-dfcb-44ce-961f-6b3242ddc147",
+              "parentUUID": "faf0d7c7-1d9e-4ba4-b145-e2fae593d0a8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirmar forma de entrega",
+              "fullTitle": "Fluxo de Cadastro Completo Confirmar forma de entrega",
+              "timedOut": null,
+              "duration": 431,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Confirma a forma de entrega\ncy.get('span.mat-radio-outer-circle').first().parents('mat-radio-button').click();\ncy.contains('span', 'Continue').click();",
+              "err": {},
+              "uuid": "fb3521b4-cf72-4b3c-b40e-6a2ae8448473",
+              "parentUUID": "faf0d7c7-1d9e-4ba4-b145-e2fae593d0a8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicionar cartão de crédito",
+              "fullTitle": "Fluxo de Cadastro Completo Adicionar cartão de crédito",
+              "timedOut": null,
+              "duration": 1949,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Escolhe a opção de pagamento com cartão\n// Adiciona um novo cartão de crédito\ncy.contains('mat-expansion-panel-header', 'Add new card').click();\ncy.get('#mat-input-10').type(creditCard.name);\ncy.get('#mat-input-11').type(creditCard.number);\ncy.get('#mat-input-12').select(creditCard.month);\ncy.get('#mat-input-13').select(creditCard.year);\ncy.contains('Submit').click();\ncy.get('.mat-radio-button.mat-accent').first().click();\n// Prossegue para o próximo passo\ncy.contains('span', 'Continue').click();",
+              "err": {},
+              "uuid": "3032167e-a9bd-4c30-945d-4f70cc8a7dc8",
+              "parentUUID": "faf0d7c7-1d9e-4ba4-b145-e2fae593d0a8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirmar pagamento e finalizar compra",
+              "fullTitle": "Fluxo de Cadastro Completo Confirmar pagamento e finalizar compra",
+              "timedOut": null,
+              "duration": 412,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Confirma o pagamento\ncy.contains('span', 'Place your order and pay').click();\ncy.contains('Thank you for your purchase!').should('be.visible');\ncy.get('span.fa-layers-counter').should('have.text', '0');",
+              "err": {},
+              "uuid": "6e82c287-dbc5-43b9-8ed2-3b19d05b708c",
+              "parentUUID": "faf0d7c7-1d9e-4ba4-b145-e2fae593d0a8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4fc194fd-f526-4f9f-9b2b-1f6471558881",
+            "8ccde6b2-dfcb-44ce-961f-6b3242ddc147",
+            "fb3521b4-cf72-4b3c-b40e-6a2ae8448473",
+            "3032167e-a9bd-4c30-945d-4f70cc8a7dc8",
+            "6e82c287-dbc5-43b9-8ed2-3b19d05b708c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15229,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

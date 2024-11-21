@@ -120,9 +120,14 @@ Cypress.Commands.add('detalhesProduto', (productName) => {
 
     cy.contains('h4', 'Write a review').should('be.visible'); 
 });
+
+Cypress.Commands.add('preencherFormularioEndereco', (pais, nome, telefone, cep, endereco, estado, cidade) => {
+    cy.get('input[placeholder="Please provide a country."]').type(pais);
+    cy.get('input[placeholder="Please provide a name."]').type(nome);
+    cy.get('input[placeholder="Please provide a mobile number."]').type(telefone);
+    cy.get('input[placeholder="Please provide a ZIP code."]').type(cep);
+    cy.get('#address').type(endereco); 
+    cy.get('input[placeholder="Please provide a state."]').type(estado);
+    cy.get('#mat-input-8').type(cidade);
+  });
   
-
-
-
-
-

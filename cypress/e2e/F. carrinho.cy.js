@@ -1,4 +1,6 @@
+const productName = 'Apple Pomace';
 describe('Carrinho', () => {
+
     before(() => {
         //cy.visit('https://juice-shop.herokuapp.com/#/login');
         cy.visit('http://localhost:3000/#/login');
@@ -7,14 +9,10 @@ describe('Carrinho', () => {
         cy.realizarLogin('palico8386@operades.com', '124578')
     });
 
-    it('Diminuir um item repetido do carrinho', () => {
+    it('O item deve ser colocado no carrinho', () => {
         cy.visit('http://localhost:3000/#/search');
-
-        cy.ColocandoProdutoCarrinho();
-        cy.visit('http://localhost:3000/#/search');
-        cy.ColocandoProdutoCarrinho();
-
-        cy.get('svg.fa-minus-square').click();
-
+        cy.ColocandoProdutoCarrinho(productName);
+        cy.contains('span', 'Your Basket').click();
+        cy.get('mat-cell').contains(productName).should('exist');
     });
 });

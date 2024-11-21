@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-21T13:25:44.771Z",
+    "end": "2024-11-21T13:25:54.818Z",
+    "duration": 10047,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "108abe3c-157e-4bc7-88ed-3b9de5052bd8",
+      "title": "",
+      "fullFile": "cypress/e2e/C. main_page.cy.js",
+      "file": "cypress/e2e/C. main_page.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5b25eafc-8e10-48f9-bd9b-3f0ac44ae7c7",
+          "title": "Main_page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Pesquisar produto disponível",
+              "fullTitle": "Main_page Pesquisar produto disponível",
+              "timedOut": null,
+              "duration": 5073,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/#/search');\ncy.get('mat-icon').contains('search').click();\ncy.pesquisar('banana');\ncy.contains(/banana/i).should('be.visible');",
+              "err": {},
+              "uuid": "947b7a0f-b12e-434e-91c9-24b596115315",
+              "parentUUID": "5b25eafc-8e10-48f9-bd9b-3f0ac44ae7c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pesquisar produto indisponível",
+              "fullTitle": "Main_page Pesquisar produto indisponível",
+              "timedOut": null,
+              "duration": 365,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/#/search');\ncy.pesquisar('ovo');\ncy.contains('span.noResultText', 'No results found').should('be.visible');",
+              "err": {},
+              "uuid": "cd8b0414-c5c8-49f3-9b55-c884be2deef6",
+              "parentUUID": "5b25eafc-8e10-48f9-bd9b-3f0ac44ae7c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicionar item ao carrinho",
+              "fullTitle": "Main_page Adicionar item ao carrinho",
+              "timedOut": null,
+              "duration": 844,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/#/product-page');\nconst productName = 'Apple Pomace';\ncy.ColocandoProdutoCarrinho(productName);\ncy.get('button[aria-label=\"Show the shopping cart\"]').click();\ncy.get('mat-row').contains(productName).should('be.visible');",
+              "err": {},
+              "uuid": "209f81a8-f4af-4002-a39c-3916653b9174",
+              "parentUUID": "5b25eafc-8e10-48f9-bd9b-3f0ac44ae7c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve abrir os detalhes do produto ao clicar na imagem dele",
+              "fullTitle": "Main_page Deve abrir os detalhes do produto ao clicar na imagem dele",
+              "timedOut": null,
+              "duration": 680,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/#/product-page');\nconst productName = 'Apple Pomace';\ncy.detalhesProduto(productName);",
+              "err": {},
+              "uuid": "68aff4ae-e9a7-4dca-8f33-f22da1c5f784",
+              "parentUUID": "5b25eafc-8e10-48f9-bd9b-3f0ac44ae7c7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "947b7a0f-b12e-434e-91c9-24b596115315",
+            "cd8b0414-c5c8-49f3-9b55-c884be2deef6",
+            "209f81a8-f4af-4002-a39c-3916653b9174",
+            "68aff4ae-e9a7-4dca-8f33-f22da1c5f784"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6962,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
