@@ -1,4 +1,4 @@
-describe('Fluxo de Cadastro Completo', () => {
+describe('Fluxo de Comprar um produto Completo', () => {
   
   const userCredentials = {
     email: 'palico8386@operades.com',

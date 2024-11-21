@@ -130,4 +130,12 @@ Cypress.Commands.add('preencherFormularioEndereco', (pais, nome, telefone, cep, 
     cy.get('input[placeholder="Please provide a state."]').type(estado);
     cy.get('#mat-input-8').type(cidade);
   });
+
+Cypress.Commands.add('quantidadeProduto', (productName, buttonIndex) => {
+    cy.contains('mat-row', productName)
+      .should('exist')
+      .within(() => {
+        cy.get('button.mat-icon-button').eq(buttonIndex).click();
+      });
+  });
   

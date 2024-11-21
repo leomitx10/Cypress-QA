@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-11-21T13:26:17.315Z",
-    "end": "2024-11-21T13:26:28.888Z",
-    "duration": 11573,
+    "start": "2024-11-21T14:17:48.692Z",
+    "end": "2024-11-21T14:17:59.762Z",
+    "duration": 11070,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2f2aeff1-4a30-483a-90a2-cb682beaa7db",
+      "uuid": "052f2fd5-b18b-4f73-86b8-76f5bb5c74e1",
       "title": "",
       "fullFile": "cypress/e2e/E. photo_wall.cy.js",
       "file": "cypress/e2e/E. photo_wall.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b9c64a2f-ace3-4062-97a0-d1038386cbe9",
+          "uuid": "7c3d3fca-9982-49b7-aa7d-b7a896fb703e",
           "title": "Photo Wall",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve adicionar uma imagem ao Photo Wall após o upload",
               "fullTitle": "Photo Wall Deve adicionar uma imagem ao Photo Wall após o upload",
               "timedOut": null,
-              "duration": 8463,
+              "duration": 8169,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('http://localhost:3000/#/photo-wall');\nconst selector = 'span.container.mat-elevation-z6.ng-star-inserted';\ncy.contaElementosPhotoWall(selector).then(initialCount => {\n  cy.log(`Quantidade inicial de elementos: ${initialCount}`);\n  cy.uploadVerificaNumeriElementosPhotoWall('CapturaDeTela.png', selector, initialCount + 1).then(() => {\n    cy.contaElementosPhotoWall(selector).then(newCount => {\n      cy.log(`Quantidade após o primeiro upload: ${newCount}`);\n    });\n  });\n});",
               "err": {},
-              "uuid": "5a5579ef-f16c-4224-8f8f-4e5dddcba263",
-              "parentUUID": "b9c64a2f-ace3-4062-97a0-d1038386cbe9",
+              "uuid": "2f36f01f-24fe-411b-91d8-8199b3882570",
+              "parentUUID": "7c3d3fca-9982-49b7-aa7d-b7a896fb703e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5a5579ef-f16c-4224-8f8f-4e5dddcba263"
+            "2f36f01f-24fe-411b-91d8-8199b3882570"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8463,
+          "duration": 8169,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
