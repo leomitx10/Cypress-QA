@@ -29,12 +29,10 @@ O cypress-file-upload é uma biblioteca que facilita a simulação de uploads de
 ```
 npm install --save-dev cypress-file-upload
 ```
-O mochawesome é uma biblioteca para geração de relatórios detalhados dos resultados dos testes.
+O mochawesome-merge é uma biblioteca que combina múltiplos relatórios de teste Mochawesome em um único arquivo
 ```
-npm install mochawesome
+npm install mochawesome mochawesome-merge mochawesome-report-generator --save-dev
 ```
-
-
 ## Executando os Testes
 Para executar os testes, você tem duas opções:
 
